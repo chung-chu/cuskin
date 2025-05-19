@@ -1,61 +1,75 @@
-<!DOCTYPE html>
-<html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyPhamBeauty</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(to bottom right, #ffe0f0, #ff8fab, #d70040);
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 30px;
-        min-height: 100vh;
-        text-align: center;
-      }
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px #d63384;
-      }
-      input {
-        padding: 15px;
-        border: none;
-        border-radius: 12px;
-        width: 100%;
-        max-width: 300px;
-        margin-bottom: 10px;
-      }
-      button {
-        padding: 12px 20px;
-        background-color: white;
-        color: #d70040;
-        border: none;
-        border-radius: 10px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-      button:hover {
-        background-color: #ffdbe8;
-      }
-      footer {
-        margin-top: 30px;
-        font-size: 14px;
-        opacity: 0.8;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>🌸 MyPhamBeauty</h1>
-    <p>Chăm sóc sắc đẹp tự nhiên – An toàn và hiệu quả</p>
-    <input type="text" placeholder="Tìm sản phẩm yêu thích..." />
-    <button>Tìm kiếm ngay</button>
-    <footer>© 2025 MyPhamBeauty – Made with 💖 by Chung Chu</footer>
-  </body>
-</html>
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+
+export default function App() {
+  const [popupOpen, setPopupOpen] = useState(true);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-pink-300 to-rose-500 text-white flex flex-col justify-between">
+      {/* Header */}
+      <header className="w-full p-4 bg-white/10 backdrop-blur-md shadow-md flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-white">💎 CUSKIN</h1>
+        <div className="relative">
+          <Button className="bg-white text-rose-500 font-bold px-4 py-2 rounded-xl">
+            Giỏ hàng ({cart.length})
+          </Button>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-grow flex flex-col items-center justify-center px-4">
+        <h2 className="text-4xl md:text-6xl font-bold drop-shadow-md mb-4 text-center">
+          🌸 Chăm sóc sắc đẹp cùng CUSKIN
+        </h2>
+        <p className="text-lg md:text-xl text-center max-w-xl mb-6">
+          Mỹ phẩm thiên nhiên, dịu nhẹ cho làn da Việt – Từ Hàn Quốc đến tay bạn 💖
+        </p>
+
+        <div className="bg-white/20 backdrop-blur-md rounded-2xl shadow-xl p-6 w-full max-w-md">
+          <form className="flex flex-col gap-4">
+            <input
+              type="text"
+              placeholder="Tên sản phẩm bạn muốn tìm..."
+              className="p-3 rounded-xl border-none focus:ring-2 focus:ring-white bg-white/70 text-black placeholder-gray-500"
+            />
+            <Button className="bg-white text-rose-500 font-semibold py-2 hover:bg-pink-200 transition rounded-xl">
+              Tìm kiếm ngay
+            </Button>
+          </form>
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-8 text-center">
+          <h3 className="text-2xl font-bold">🎁 Ưu đãi đặc biệt hôm nay!</h3>
+          <p className="text-md mb-4">Đăng ký nhận mã giảm giá 10% cho đơn hàng đầu tiên!</p>
+          <Button className="bg-yellow-300 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-400 transition">
+            Đăng ký ngay
+          </Button>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="w-full text-center p-4 bg-white/10 backdrop-blur-md text-sm">
+        © 2025 CUSKIN – Made with 💖 by Chung Chu | Hotline: 0123 456 789
+      </footer>
+
+      {/* Popup */}
+      {popupOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white text-black rounded-xl p-6 max-w-sm text-center shadow-lg">
+            <h4 className="text-xl font-bold mb-2">🎉 Ưu đãi mới!</h4>
+            <p className="mb-4">Mua 2 tặng 1 cho mọi đơn hàng hôm nay!</p>
+            <Button onClick={() => setPopupOpen(false)} className="bg-rose-500 text-white px-4 py-2 rounded-xl">
+              Đóng
+            </Button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
