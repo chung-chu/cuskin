@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css"; // Tạo file này nếu muốn custom riêng cho trang home
+import "./Home.css";
 
 const products = [
   { id: 1, name: "Sản phẩm 1", image: "https://via.placeholder.com/150", price: "100.000₫" },
