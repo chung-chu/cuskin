@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cuskin/static/css/main.158e2c5d.css",
+    "main.js": "/cuskin/static/js/main.97012287.js",
+    "index.html": "/cuskin/index.html",
+    "main.158e2c5d.css.map": "/cuskin/static/css/main.158e2c5d.css.map",
+    "main.97012287.js.map": "/cuskin/static/js/main.97012287.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.158e2c5d.css",
+    "static/js/main.97012287.js"
+  ]
+}
