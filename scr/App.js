@@ -1,38 +1,34 @@
-import { Routes, Route, NavLink } from "react-router-dom";
 import React from "react";
+import { Routes, Route, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
-import SanPham from "./pages/SanPham";
-import BaiViet from "./pages/BaiViet";
-import GioiThieu from "./pages/GioiThieu";
-import GioHang from "./pages/GioHang";
-import TaiKhoan from "./pages/TaiKhoan";
-import ThanhToan from "./pages/ThanhToan";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import Contact from "./pages/Contact";
+import "./App.css";
 
 function App() {
   return (
     <>
-      <nav>
-        <NavLink to="/" end>CUSKIN</NavLink>
-        <NavLink to="/sanpham">Sản phẩm</NavLink>
-        <NavLink to="/baiviet">Bài viết</NavLink>
-        <NavLink to="/gioithieu">Giới thiệu</NavLink>
-        <NavLink to="/giohang">Giỏ hàng</NavLink>
-        <NavLink to="/taikhoan">Tài khoản</NavLink>
-        <NavLink to="/thanhtoan">Thanh toán</NavLink>
-      </nav>
-      <main style={{maxWidth: 900, margin: "2em auto"}}>
+      <header>
+        <nav className="navbar">
+          <NavLink to="/" end className="logo">
+            <span>CUSKIN</span>
+          </NavLink>
+          <NavLink to="/products">Sản phẩm</NavLink>
+          <NavLink to="/about">Giới thiệu</NavLink>
+          <NavLink to="/contact">Liên hệ</NavLink>
+        </nav>
+      </header>
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/sanpham" element={<SanPham />} />
-          <Route path="/baiviet" element={<BaiViet />} />
-          <Route path="/gioithieu" element={<GioiThieu />} />
-          <Route path="/giohang" element={<GioHang />} />
-          <Route path="/taikhoan" element={<TaiKhoan />} />
-          <Route path="/thanhtoan" element={<ThanhToan />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <footer>
-        © 2025 CUSKIN – Made with 💖 by Chung Chu | Hotline: 0123 456 789
+        <div>© 2025 CUSKIN – Made with 💖 by Chung Chu | Hotline: 0123 456 789</div>
       </footer>
     </>
   );
