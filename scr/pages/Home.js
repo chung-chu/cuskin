@@ -1,48 +1,65 @@
 import React from "react";
 import "./Home.css";
 
-const products = [
-  { id: 1, name: "Sản phẩm 1", image: "https://via.placeholder.com/150", price: "100.000₫" },
-  { id: 2, name: "Sản phẩm 2", image: "https://via.placeholder.com/150", price: "200.000₫" },
-  { id: 3, name: "Sản phẩm 3", image: "https://via.placeholder.com/150", price: "300.000₫" },
-];
-
-const reviews = [
-  { id: 1, name: "Khách A", comment: "Sản phẩm rất tốt!", avatar: "https://via.placeholder.com/50" },
-  { id: 2, name: "Khách B", comment: "Tôi rất hài lòng!", avatar: "https://via.placeholder.com/50" },
-  { id: 3, name: "Khách C", comment: "Sẽ ủng hộ lần sau.", avatar: "https://via.placeholder.com/50" },
-];
-
 export default function Home() {
   return (
     <div className="home-container">
       <div className="banner">
-        <img src="https://via.placeholder.com/800x250?text=BANNER+CUSKIN" alt="Banner CUSKIN" />
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="Banner CUSKIN" />
+        <div className="banner-text">
+          <h1>CUSKIN VIỆT NAM</h1>
+          <p>Chăm sóc làn da khỏe mạnh, rạng rỡ mỗi ngày</p>
+          <a href="#products" className="cta-btn">Xem sản phẩm</a>
+        </div>
       </div>
 
-      <h2>Sản phẩm nổi bật</h2>
-      <div className="products">
-        {products.map((p) => (
-          <div className="product-card" key={p.id}>
-            <img src={p.image} alt={p.name} />
-            <h3>{p.name}</h3>
-            <p>{p.price}</p>
+      <section className="section" id="products">
+        <h2>Sản phẩm nổi bật</h2>
+        <div className="products">
+          <div className="product-card">
+            <img src="https://via.placeholder.com/150/FFC0CB/000000?text=Serum+1" alt="Serum 1" />
+            <h3>Serum Dưỡng Ẩm</h3>
+            <p>250.000₫</p>
           </div>
-        ))}
-      </div>
+          <div className="product-card">
+            <img src="https://via.placeholder.com/150/FFD700/000000?text=Serum+2" alt="Serum 2" />
+            <h3>Serum Sáng Da</h3>
+            <p>320.000₫</p>
+          </div>
+          <div className="product-card">
+            <img src="https://via.placeholder.com/150/ADD8E6/000000?text=Serum+3" alt="Serum 3" />
+            <h3>Serum Chống Lão Hóa</h3>
+            <p>400.000₫</p>
+          </div>
+        </div>
+      </section>
 
-      <h2>Đánh giá khách hàng</h2>
-      <div className="reviews">
-        {reviews.map((r) => (
-          <div className="review-card" key={r.id}>
-            <img src={r.avatar} alt={r.name} />
+      <section className="section reviews">
+        <h2>Khách hàng nói gì?</h2>
+        <div className="reviews-list">
+          <div className="review-card">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="avatar" />
             <div>
-              <strong>{r.name}</strong>
-              <p>{r.comment}</p>
+              <strong>Trần Lan</strong>
+              <p>Sản phẩm tuyệt vời, phù hợp với da nhạy cảm!</p>
             </div>
           </div>
-        ))}
-      </div>
+          <div className="review-card">
+            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="avatar" />
+            <div>
+              <strong>Nam Phạm</strong>
+              <p>Chất lượng vượt mong đợi, sẽ tiếp tục ủng hộ.</p>
+            </div>
+          </div>
+          <div className="review-card">
+            <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="avatar" />
+            <div>
+              <strong>Nguyễn Hồng</strong>
+              <p>Da mình cải thiện rõ rệt sau 1 tháng sử dụng!</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
