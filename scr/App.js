@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import React from "react";
 import Home from "./pages/Home";
 import SanPham from "./pages/SanPham";
@@ -10,7 +10,7 @@ import ThanhToan from "./pages/ThanhToan";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <nav>
         <NavLink to="/" end>CUSKIN</NavLink>
         <NavLink to="/sanpham">Sản phẩm</NavLink>
@@ -34,7 +34,7 @@ function App() {
       <footer>
         © 2025 CUSKIN – Made with 💖 by Chung Chu | Hotline: 0123 456 789
       </footer>
-    </BrowserRouter>
+    </>
   );
 }
 
