@@ -1,1 +1,24 @@
-body { margin: 0; font-family: Arial, sans-serif; }
+.cuskin-app {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff;
+  color: #222;
+}
+main {
+  min-height: 60vh;
+  padding: 0 0 2rem 0;
+}
+.section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff0f6;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #0001;
+}
+.section h2 {
+  color: #e91e63;
+  margin-bottom: 1rem;
+}
+.about {
+  background: #ffe6ef;
+}
