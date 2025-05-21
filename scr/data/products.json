@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Serum Phục Hồi Da",
+    "shortDesc": "Tái tạo và phục hồi làn da, phù hợp mọi loại da.",
+    "image": "/assets/products/serum.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Kem Dưỡng Ẩm Sâu",
+    "shortDesc": "Dưỡng ẩm chuyên sâu, giữ ẩm lâu dài.",
+    "image": "/assets/products/kemduong.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Toner Cân Bằng Da",
+    "shortDesc": "Làm sạch, cân bằng pH cho da.",
+    "image": "/assets/products/toner.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Sữa Rửa Mặt Dịu Nhẹ",
+    "shortDesc": "Làm sạch sâu, dịu nhẹ cho da nhạy cảm.",
+    "image": "/assets/products/srm.jpg"
+  }
+]
