@@ -1,1 +1,23 @@
-
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@media (max-width: 768px) {
+  .section, .container {
+    padding: 1rem !important;
+  }
+}
